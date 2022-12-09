@@ -21,7 +21,7 @@ describe('Login and Signup', () => {
         );
     })
 
-    //Test Case: Sign Up --REVISIT
+    //Test Case: Sign Up
     it('Signs up a new user', () => 
     {
         cy.origin(
@@ -33,22 +33,6 @@ describe('Login and Signup', () => {
                 cy.get('input[name="password"]').type('P@ssword12');
                 cy.get('button[id="1-submit"]').click();
                 //cy.get('button[aria-label="Sign Up"]').click();
-                }
-        );
-
-    })
-
-    //Test case: Forget password --REMOVE
-    xit('Should reset password', () => {
-        cy.origin(
-            "https://dev-mlluudmotpwoldtv.us.auth0.com",
-            { args: {} },
-            ({}) => {
-                cy.get('p[class="auth0-lock-alternative"]').click();
-                cy.get('div[title="Reset your password"]').should('have.text', 'Reset your password')
-                cy.get('input[id="1-email"]').type('test@yahoo.com');
-                cy.get('button[id="1-submit"]').click();
-                cy.get('.auth0-global-message.auth0-global-message-success').should('be.visible');
                 }
         );
 
