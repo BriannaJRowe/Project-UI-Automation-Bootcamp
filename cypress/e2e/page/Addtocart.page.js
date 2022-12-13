@@ -3,7 +3,7 @@ class AddtoCart{
     //Selectors
     // - Products list Selectors
     get ProductOne () {
-        return ('.chakra-button.snipcart-add-item.css-betff9[data-item-id="quality-hat-model"]')
+        return ('button[data-item-id="quality-hat-model"]')
     }
 
     get ProductTwo () {
@@ -11,12 +11,11 @@ class AddtoCart{
     }
 
     get CartSummary () {
-        //return ('.snipcart-cart__content')
-        return ('.snipcart-test-banner__message')
+        return ('section.snipcart-cart__content');
     }
 
     get TopCartTotal () {
-        return ('#top-cart')
+        return ('button[class="chakra-button snipcart-checkout css-186fne3"]')
     }
 
     //Product details page selector

@@ -18,15 +18,19 @@ describe('Adding To Cart', () => {
         );
     })
 
-    // Add a product from the product list page
-    xit('should add a product from product list page', () => {
-        cy.get(Addtocart.ProductOne).click();
-        //cy.get(Addtocart.CartSummary).should('be.visible');
-        //cy.get(Addtocart.TopCartTotal).should('have.text', '$20.00')
+    // Test Case: Add a product from the product list page
+    it('should add a product from product list page', () => {
+        cy.get(Addtocart.ProductOne).scrollIntoView()
+        cy.wait(5000)
+        cy.get(Addtocart.ProductOne).click()
+        cy.get(Addtocart.CartSummary).should('be.visible')
+        cy.get('.snipcart-item-line__title.snipcart__font--xlarge.snipcart__font--secondary.snipcart__font--black').should('have.text', ' Quality Fitted Hat ')
+        //cy.get(Addtocart.TopCartTotal).should('have.text', $20.00)
+        
     })
 
     //Add a product from the product details page
-    it('should add a product from product details page', () => {
+    xit('should add a product from product details page', () => {
         
         cy.get(Addtocart.ProductImage1).click();
         //cy.get('div[class="chakra-stack css-84zodg"] h2[class="chakra-heading css-1dklj6k"]').
