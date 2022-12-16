@@ -9,6 +9,7 @@ module.exports = defineConfig({
     //base url and spec pattern
     baseUrl: 'https://ui-automation-camp.vercel.app/', 
     specPattern: 'cypress/e2e/test/**/*.cy.{js,jsx,ts,tsx}',
+    chromeWebSecurity: false,
 
   },
 });
