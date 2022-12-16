@@ -22,7 +22,7 @@ describe('Contact', () => {
         xit('Should send a message using the form', () => {
             cy.wait(5000)
             cy.get(Contact.Contactbtn).click()
-            cy.wait(5000)
+            cy.wait(1500)
             cy.get(Contact.fname).type('Brianna')
             cy.get(Contact.lname).type('TEST')
             cy.get(Contact.email).type('briannastest@gmail.com')
@@ -31,18 +31,21 @@ describe('Contact', () => {
             cy.get(Contact.sendmsgbtn).click()
             cy.wait(1500)
             cy.get(Contact.popup).should('be.visible')
-        })
-
-        //Test Case: Verify user is taken to the company's twitter page
-        xit('should access the Twitter profile', () => {
-            cy.wait(5000)
-            cy.get(Contact.Contactbtn).click()
-            cy.wait(5000)
-            cy.get('p[class="chakra-text css-0"]').contains('Twitter').click()
-            cy.wait(10000)
-            cy.url().should('eq', 'https://twitter.com/qualityworkscg')
+            cy.get(Contact.popup).should('have.text','Message Sent!Your message has been sent!')
             
         })
+
+        //Test Case: verify that alternate contact options are provided on the contact page
+        it('should verify that alternate contact options are provided', () => {
+            cy.wait(300)
+            cy.get(Contact.Contactbtn).click()
+            cy.wait(1000)
+            cy.get('p[class="chakra-text css-0"]').contains('Twitter').should('have.text', 'Twitter')         
+            cy.get('p[class="chakra-text css-0"]').contains('Linkedin').should('have.text', 'Linkedin') 
+            cy.get('[href="mailto:info@qualityworkscg.com"] > .chakra-stack > .chakra-text').should('have.text','info@qualityworkscg.com')
+
+        })
+            
 
         // Test Case: Verify that the user cannot send a message without completing all fields (Unhappy path)
         it('Should not send a message', () => {
@@ -56,6 +59,8 @@ describe('Contact', () => {
             cy.get(Contact.sendmsgbtn).click()
             cy.wait(1500)
             cy.get(Contact.fielderror).should('be.visible') 
+            cy.get(Contact.fielderror).should('have.text', 'Field is required!')
+
         })
 })
 

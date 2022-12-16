@@ -40,11 +40,15 @@ class Contact {
         return ('#toast-1')
     }
 
+    get popupmessage()
+    {
+        return ('chakra-alert__desc css-zycdy9')
+    }
+
    get fielderror()
    {
     return ('.chakra-form__error-message.css-170ki1a')
    }
-
 
 }
 
