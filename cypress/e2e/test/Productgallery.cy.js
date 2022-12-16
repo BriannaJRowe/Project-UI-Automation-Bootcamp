@@ -19,7 +19,7 @@ describe('Contact', () => {
     })
 
     //Test Case: Verify home page content
-        xit('Should take the user to the products home page', () => {
+        it('Should take the user to the products home page', () => {
             cy.url().should('eq', 'https://ui-automation-camp.vercel.app/products')
             cy.wait(5000);
             cy.get(Gallery.Navheader).should('have.text', 'Automation Camp Store')
@@ -28,7 +28,7 @@ describe('Contact', () => {
         })
 
         //Test Case: Verify that the user can sign out
-        xit('Should take the user back to the landing page', () => {
+        it('Should take the user back to the landing page', () => {
             cy.get(Gallery.signout).click();
             cy.url().should('eq', 'https://ui-automation-camp.vercel.app/')
 
@@ -36,17 +36,10 @@ describe('Contact', () => {
 
         //Test Case: Verify that the iFrame is loaded
         it('Should verify that the iFrame is loaded', () => {
-            /*cy.wait(5000)
-            cy.get(Gallery.iframe).click()
-
-            cy.origin(
-                "https://www.youtube.com/watch?v=JSda4u5jFFk&embeds_euri=https%3A%2F%2Fui-automation-camp.vercel.app%2F&source_ve_path=MjM4NTE&feature=emb_title",
-                { args: {} },
-                ({}) => {
-                    cy.url().should('include', 'https://www.youtube.com/watch')
-                    
-                    }
-            );*/
+            cy.wait(5000)
+           
+            cy.get('div.css-n8pbor').should('be.visible')
+            cy.wait(5000)
             cy.frameLoaded(Gallery.iframe, { url: 'https://www.youtube.com/watch?v=JSda4u5jFFk&embeds_euri=https%3A%2F%2Fui-automation-camp.vercel.app%2F&source_ve_path=MjM4NTE&feature=emb_title' })
         })
 
