@@ -32,8 +32,6 @@ describe('Adding To Cart', () => {
     it('should add a product from product details page', () => {
         
         cy.get(Addtocart.ProductImage1).click();
-        //cy.get('div[class="chakra-stack css-84zodg"] h2[class="chakra-heading css-1dklj6k"]').
-        //cy.get('h2[class="chakra-heading css-1dklj6k"]').contains('Quality Fitted Hat');
         cy.wait(3000)
         cy.get(Addtocart.Productheader).should('have.text', 'Quality Fitted Hat ')
         cy.get(Addtocart.AddtoCartbtn).click();
