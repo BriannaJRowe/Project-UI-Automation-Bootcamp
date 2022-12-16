@@ -65,7 +65,6 @@ describe('Login and Signup', () => {
 
     })
 
-    //note: put entire login block in before each for other tests
 
 
 }) 
