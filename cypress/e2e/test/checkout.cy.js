@@ -22,7 +22,7 @@ describe('Sort and Filter', () => {
       })
 
       // Test Case: Add a product to cart and checkout
-    xit('should checkout a single item', () => {
+    it('should checkout a single item', () => {
         cy.get('button[data-item-id="quality-hat-model"]').scrollIntoView()
         cy.wait(5000)
         product.Addproduct()
