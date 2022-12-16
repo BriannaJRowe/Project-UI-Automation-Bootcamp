@@ -29,14 +29,13 @@ describe('Cart', () => {
         cy.get(Cart.removebtn).should('be.visible');
         cy.get(Cart.removebtn).click()
         
-        cy.get(Cart.emptycartmsg).should('be.visible');
-        
-               
+        cy.get(Cart.emptycartmsg).should('not.exist');
+
         
     })
 
     //Test Case: Increase the quantity of a product in the cart
-    xit('should increase the quantity of an item in the cart', () => {
+    it('should increase the quantity of an item in the cart', () => {
         cy.get('button[data-item-id="quality-hat-model"]').scrollIntoView()
         cy.wait(5000)
         cy.get('button[data-item-id="quality-hat-model"]').click()
@@ -48,7 +47,7 @@ describe('Cart', () => {
     })
 
     //Test Case: decrease the quantity of a product in the cart
-    xit('should decrease the quantity of an item in the cart', () => {
+    it('should decrease the quantity of an item in the cart', () => {
         cy.get('button[data-item-id="quality-hat-model"]').scrollIntoView()
         cy.wait(5000)
         cy.get('button[data-item-id="quality-hat-model"]').click()
