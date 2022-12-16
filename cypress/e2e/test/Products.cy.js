@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import Products from '../page/Details.page'
 
-describe('Contact', () => {
+describe('Product details', () => {
     beforeEach(() => {
         cy.visit('/')
         cy.get('#signInOrRegister').click();
