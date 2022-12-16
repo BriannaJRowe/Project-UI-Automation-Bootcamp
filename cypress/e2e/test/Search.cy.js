@@ -17,14 +17,16 @@ describe('Searching', () => {
         );
     })
 
+//Test Case: Verify that the user can search by name
 
-        xit('Should search by name', () => {
+        it('Should search by name', () => {
             cy.get('#search').type('Quality Fitted Hat')
             cy.get('img[src="/images/quality-hat-model.jpg"]').should('be.visible')
             cy.get('.chakra-text.css-1n64n71').should('have.text', 'Quality Fitted Hat')
             cy.get('.chakra-text.css-0').should('have.text', '$30.00')
         })
 
+        //Test Case: Verify that the user can search by category
         it('Should search by category', () => {
             cy.get('#search').type('Hat')
             cy.get('img[src="/images/quality-hat-model.jpg"]').should('be.visible')
@@ -37,6 +39,7 @@ describe('Searching', () => {
         })
 
         // Unhappy path
+        ////Test Case: Verify that the user cannot search by number
         it('Should not produce results when searching by number', () => {
             cy.get('#search').type('1')
             cy.get('.css-12qzrsi').should('be.visible')
