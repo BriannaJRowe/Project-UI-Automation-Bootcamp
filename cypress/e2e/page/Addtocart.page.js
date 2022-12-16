@@ -31,10 +31,8 @@ class AddtoCart{
 
     get Productheader ()
     {
-        return ('div[class="chakra-stack css-84zodg"] h2[class="chakra-heading css-1dklj6k"]')
-        //h2[class="chakra-heading css-1dklj6k"div[class='chakra-stack css-84zodg'] h2[class='chakra-heading css-1dklj6k']
+        return ('.css-egoftb > :nth-child(1) > .chakra-heading')
     }
-    //Methods
 
 }
 

@@ -25,27 +25,26 @@ describe('Adding To Cart', () => {
         cy.get(Addtocart.ProductOne).click()
         cy.get(Addtocart.CartSummary).should('be.visible')
         cy.get('.snipcart-item-line__title.snipcart__font--xlarge.snipcart__font--secondary.snipcart__font--black').should('have.text', ' Quality Fitted Hat ')
-        //cy.get(Addtocart.TopCartTotal).should('have.text', $20.00)
         
     })
 
     //Add a product from the product details page
-    xit('should add a product from product details page', () => {
+    it('should add a product from product details page', () => {
         
         cy.get(Addtocart.ProductImage1).click();
         //cy.get('div[class="chakra-stack css-84zodg"] h2[class="chakra-heading css-1dklj6k"]').
         //cy.get('h2[class="chakra-heading css-1dklj6k"]').contains('Quality Fitted Hat');
-        //cy.get(Addtocart.Productheader).should('have.text', 'Quality Fitted Hat')
+        cy.wait(3000)
+        cy.get(Addtocart.Productheader).should('have.text', 'Quality Fitted Hat ')
         cy.get(Addtocart.AddtoCartbtn).click();
-        //cy.get(Addtocart.CartSummary).should('be.visible');
-        //cy.get(Addtocart.TopCartTotal).should('have.text', '$20.00')
+        cy.get(Addtocart.CartSummary).should('be.visible');
+       
     })
 
     //Adds multiple products to cart
-    xit('should add 2 products from product list page', () => {
+    it('should add 2 products from product list page', () => {
         cy.get(Addtocart.ProductOne).click();
         cy.get(Addtocart.ProductTwo).click();
-        //cy.get(Addtocart.CartSummary).should('be.visible');
-        //cy.get(Addtocart.TopCartTotal).should('have.text', '$20.00')
+        
     })
 })
