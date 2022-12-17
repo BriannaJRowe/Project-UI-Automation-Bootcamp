@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import checkout from '../page/checkout.page'
-import product from '../page/addtocart.page'
+import product from '../page/tocart.page'
 
 //const tests = require('../../fixtures/example.json')
 
