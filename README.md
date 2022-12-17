@@ -11,8 +11,8 @@ Clone the repository & install dependencies
 
 * N.B. The browser must be installed on the device.
 
-$ git clone 
-$ cd cypress-ui-automation-bootcamp
+$ git clone https://github.com/BriannaJRowe/Project-UI-Automation-Bootcamp.git
+$ cd Project-UI-Automation-Bootcamp
 $ npm install
 
 ### Folder Structure
