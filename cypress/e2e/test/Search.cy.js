@@ -23,7 +23,7 @@ describe('Searching', () => {
             cy.get('#search').type('Quality Fitted Hat')
             cy.get('img[src="/images/quality-hat-model.jpg"]').should('be.visible')
             cy.get('.chakra-text.css-1n64n71').should('have.text', 'Quality Fitted Hat')
-            cy.get('.chakra-text.css-0').should('have.text', '$30.00')
+            cy.get('.chakra-text.css-0').should('have.text', '$30')
         })
 
         //Test Case: Verify that the user can search by category
