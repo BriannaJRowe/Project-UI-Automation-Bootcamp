@@ -19,7 +19,7 @@ describe('Contact', () => {
     })
 
     //Test Case: Add a product from the product list page
-        xit('Should send a message using the form', () => {
+        it('Should send a message using the form', () => {
             cy.wait(5000)
             cy.get(Contact.Contactbtn).click()
             cy.wait(1500)
