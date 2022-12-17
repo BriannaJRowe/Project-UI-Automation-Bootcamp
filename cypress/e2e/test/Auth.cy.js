@@ -34,7 +34,7 @@ describe('Login and Signup', () => {
             { args: {} },
             ({}) => {
                 cy.get('.auth0-lock-tabs').contains('Sign Up').click();
-                cy.get('input[name="email"]').type('annxsivan12@gmail.com');
+                cy.get('input[name="email"]').type('annxsivan13@gmail.com');
                 cy.get('input[name="password"]').type('P@ssword12');
                 cy.get('button[id="1-submit"]').click();
                 }
