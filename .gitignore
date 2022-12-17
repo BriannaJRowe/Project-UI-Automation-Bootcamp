@@ -42,6 +42,7 @@ node_modules/
 jspm_packages/
 videos/
 2-advanced-examples/
+screenshots/
 
 # TypeScript v1 declaration files
 typings/
